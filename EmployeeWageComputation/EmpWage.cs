@@ -6,15 +6,23 @@ namespace EmployeeWageComputation
 {
     class EmpWage
     {
-        //method gives employee attendance
-        public void EmpAttendance()
+        //static variables
+        const int WAGE_PER_HR = 20;
+        const int FULL_TIME_HR = 8;
+        public void WageComputation()//method to calculate employee wage
         {
             Random random = new Random();
-            int empcheck = random.Next(0, 2);// 0,1
-            if(empcheck == 0)
-                Console.WriteLine("Employee is Present");
+            int empCheck = random.Next(0, 2);
+            if (empCheck == 0)
+            {
+                int total = WAGE_PER_HR * FULL_TIME_HR;
+                Console.WriteLine("Employee Wage :" + total);
+            }
             else
-                Console.WriteLine("Employee is Absent");
+            {
+                int total = WAGE_PER_HR * 0;
+                Console.WriteLine("Employee Wage :" + total);
+            }
         }
     }
 }
