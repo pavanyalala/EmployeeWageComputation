@@ -10,6 +10,7 @@ namespace EmployeeWageComputation
         const int WAGE_PER_HR = 20;
         const int FULL_TIME = 1;
         const int PART_TIME=2;
+        const int WAGE_PER_MONTH = 20;
         public void WageComputation()//method to calculate employee wage
         {
             int empHrs = 0;
@@ -27,7 +28,7 @@ namespace EmployeeWageComputation
                     empHrs = 0;
                     break;
             }
-            Console.WriteLine("Employee Wage :" + empHrs*WAGE_PER_HR);
+            Console.WriteLine("Employee Wage :" + (empHrs*WAGE_PER_HR)*WAGE_PER_MONTH);
         }
     }
 }
