@@ -12,6 +12,9 @@ namespace EmployeeWageComputation
         const int PART_TIME = 2;
         const int WORKING_DAYS_IN_MONTH = 20;
         const int MAX_WORKING_HRS = 100;
+        /// <summary>
+        /// Using Class Method
+        /// </summary>
         public void WageComputation()//method to calculate employee wage
         {
             int empHrs = 0;
