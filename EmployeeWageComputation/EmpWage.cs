@@ -6,32 +6,28 @@ namespace EmployeeWageComputation
 {
     class EmpWage
     {
-        //static variables
-        const int WAGE_PER_HR = 20;
-        const int FULL_TIME = 1;
-        const int PART_TIME = 2;
-        const int WORKING_DAYS_IN_MONTH = 20;
-        const int MAX_WORKING_HRS = 100;
+        const int IS_FULL_TIME = 1;
+        const int IS_PART_TIME = 2;
         /// <summary>
         /// Using Class Method
         /// </summary>
-        public void WageComputation()//method to calculate employee wage
+        public void WageComputation(string company, int empRatePerHour, int noOfWorkingDays, int maxHoursPerMonth)//method to calculate employee wage
         {
             int empHrs = 0;
             int totalEmpHrs = 0;
-            int totalDays = 0;
-            while (totalEmpHrs <= MAX_WORKING_HRS && totalDays < WORKING_DAYS_IN_MONTH)
+            int totalWorkingDays = 0;
+            while (totalEmpHrs <= maxHoursPerMonth && totalWorkingDays < noOfWorkingDays)
             {
-                totalDays++;
+                totalWorkingDays++;
                 Random random = new Random();
                 int empCheck = random.Next(0, 3);
                 switch (empCheck)
 
                 {
-                    case FULL_TIME:
+                    case IS_FULL_TIME:
                         empHrs = 8;
                         break;
-                    case PART_TIME:
+                    case IS_PART_TIME:
                         empHrs = 4;
                         break;
                     default:
@@ -41,7 +37,7 @@ namespace EmployeeWageComputation
 
                 }
                 totalEmpHrs = totalEmpHrs + empHrs;
-                int totalWage = totalEmpHrs * WAGE_PER_HR;
+                int totalWage = totalEmpHrs * empRatePerHour;
                 Console.WriteLine("Total Employee Wage :" + totalWage);
             }
             
