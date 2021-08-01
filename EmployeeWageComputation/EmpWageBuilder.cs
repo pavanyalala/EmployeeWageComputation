@@ -9,7 +9,7 @@ namespace EmployeeWageComputation
         const int IS_FULL_TIME = 0;
         const int IS_PART_TIME = 1;
         public static int payment = 0;
-        public static int workHr;
+        public static int empWorkHr;
         public static int totalDays = 0;
         public static int totalHrs = 0;
 
@@ -18,20 +18,21 @@ namespace EmployeeWageComputation
             while (totalDays <= workingDays && totalHrs <= maxHr)
             {
                 Random random = new Random();
-                int num = random.Next(0, 3);
-                switch (num)
+                int number = random.Next(0, 2);
+                switch (number)
                 {
                     case IS_FULL_TIME:
-                        workHr = 8;
+                        empWorkHr = 8;
                         break;
                     case IS_PART_TIME:
-                        workHr = 4;
+                        empWorkHr = 4;
                         break;
                     default:
+                        empWorkHr = 0;
                         break;
                 }
                 totalDays++;
-                totalHrs += workHr;
+                totalHrs = totalHrs + empWorkHr;
             }
 
             payment = wagePerHr * totalHrs;
