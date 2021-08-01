@@ -6,9 +6,10 @@ namespace EmployeeWageComputation
     {
         static void Main(string[] args)
         {
-            EmpWage empwage = new EmpWage();
-            empwage.WageComputation("Dmart",20,2,10);
-            empwage.WageComputation("Reliance", 10, 4, 20);
+            EmpWageBuilder empWageBuilder = new EmpWageBuilder();
+            empWageBuilder.Wage("Accenture", 10, 12, 70);
+            empWageBuilder.Wage("Capgemini", 16, 17, 190);
+            empWageBuilder.Wage("Infosys", 26, 18, 80);
 
 
         }
